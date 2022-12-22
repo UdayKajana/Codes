@@ -1,6 +1,6 @@
 package patterns;
 import java.util.Scanner;
-public class PascalTriangle {
+public class Pyramid {
     public static void main(String argvs[]){
         Scanner scanner=new Scanner(System.in);
         int a= scanner.nextInt();
