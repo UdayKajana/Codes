@@ -12,7 +12,7 @@ public class Diamond {
                 else
                 System.out.print(" * ");
             }
-            System.out.println();
+            System.out.print("\n");
         }
         scanner.close();
     }
