@@ -8,10 +8,11 @@ public class Pyramid {
             for(int j=0;j<a;j++){
                 if(j<a-i)
                 System.out.print(" ");
-                else
+                else{
                 System.out.print("*");
                 if(j<a)
                 System.out.print(" ");
+                }
             }
             System.out.println();
         }
