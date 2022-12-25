@@ -4,22 +4,26 @@ public class PascalTriangle {
     public static void main(String argvs[]){
         Scanner scanner=new Scanner(System.in);
         int a= scanner.nextInt();
-        int c; boolean flag=false;
+        int count=1; boolean flag=true;
         for(int i=0;i<a;i++){
-            c=0;
+            count=0;
+            flag=true;
             for(int j=0;j<a;j++){
                 if(j<a-i)
                 System.out.print(" ");
                 else{
-                    if(flag)
-                System.out.print(--c+1);
-                else
-                System.out.print((c++)+1);
-                if(j<a)
-                System.out.print(" ");
-            }
-            if(c+1==i)
-            flag=!flag;
+                    if(flag && count<=i/2){
+                        count++;
+                        flag=false;
+                        System.out.print(count);
+                    }
+                    else{
+                        count--;
+                        System.out.print(count);
+                    }
+                    if(j<a)
+                        System.out.print(" ");
+                }
             }
             System.out.println();
         }
