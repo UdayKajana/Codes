@@ -2,41 +2,57 @@ package HackerEarth_CodeMonk;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-public class CycleShift {
-    static int max=0;
-    static int index=0;
+public class CycleShift {    
+    List<Integer> index=new ArrayList<Integer>();
+    int n,T,k,max=-10000; 
     public static void main(String argvs[]){
-        int n,T,k;
-        List<String> list=new ArrayList<String>();
+        CycleShift cs=new CycleShift();
+        cs.start();
+        cs.solve();
+        cs.close();
+    }
+    private void close() {
+    }
+    private void start() {
         String s,temp;
         Scanner scanner = new Scanner(System.in);
         T=scanner.nextInt();
         while(T>0){
+            index.clear();
             n=scanner.nextInt();
             k=scanner.nextInt();
             s=scanner.next();
+            System.out.println(s);
             for(int i=0;i<s.length();i++){
             if(s.charAt(i)=='1'){
                 temp=s.substring(i);
                 temp=temp+s.substring(0,i);
-                findDecimal(temp,i);                
+                System.out.println(temp);
+                //findDecimal(temp,i);                
             }
         }
-        System.out.println(index+((k-1)*s.length()));
+        for(int i=0;i<index.size();i++)
+        System.out.print(index.get(i)+"- ");
             T--;            
         }
         scanner.close();
+    }    
+    private void solve() {
     }
-
-    private static void findDecimal(String temp,int ind) {
+    private void findDecimal(String temp,int ind) {
         int sum=0,mult=1;
         for(int i=temp.length()-1;i>=0;i--){
             sum=sum+(Integer.parseInt(String.valueOf(temp.charAt(i)))*mult);
             mult=mult*2;
         }
-        if(sum>max){
-            max=sum;
-            index=ind;
-        }
+        System.out.print(sum+" + ");
+        // if(sum>max){
+        //     max=sum;
+        //     index.clear();
+        //     index.add(ind);
+        // }
+        // else if(sum==max){
+        //     index.add(ind);
+        // }
     }
 }
