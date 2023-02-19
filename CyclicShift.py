@@ -1,5 +1,10 @@
 def getDecimal(temp):
-    print(temp)
+    p=0
+    for i in range(len(temp)):
+        p=p+pow(2, i)
+    print(reversed(temp),p)
+    print("")
+
 def solve(s):
     l = list()
     place = 0
@@ -7,7 +12,7 @@ def solve(s):
         sum = 0
         temp = s[i+1:]
         temp = temp+s[0:i+1]
-        print(temp)
+        getDecimal(temp)
 
 T = int(input())
 while (T > 0):
