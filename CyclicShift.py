@@ -9,23 +9,24 @@ def getDecimal(l):
 
 
 T = int(input())
+sums = list()
+pos = list()
+rel=list()
+l = list()
+
 while (T > 0):
-    sums = list()
-    pos = list()
-    l = list()
     T = T-1
     n, k = map(int, input().split())
     s = input()
     s = s.replace(" ", "")
-    sums.append(getDecimal(s))
     for i in range(len(s)):
-        sums.append(getDecimal(s[i+1:]+s[0:i+1]))
+        sums.append(getDecimal(s[i:]+s[0:i+1]))
     mx=max(sums)
+    print(sums)
     for i in range(len(sums)):
-        if sums[i] == mx:
-            if len(pos)==0:
-                pos.append(i)
-            else:
-                pos.append(pos[-1]-i)
-    print(pos)
-    
+        if sums[i]==mx:
+            pos.append(i)
+    lap=0
+    while(True):
+        if k>count:
+            count=
