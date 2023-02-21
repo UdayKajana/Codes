@@ -1,24 +1,8 @@
-def getDecimal(l):
-    l = list(reversed(l))
-    mult = 1
-    sum = 0
-    for i in range(len(l)):
-        sum = sum+(int(l[i])*mult)
-        mult = mult*2
-    return sum
-
-
-T = int(input())
-sums = list()
-l = list()
-
-while (T > 0):
-    T = T-1
-    sums.clear()
-    l.clear()
+for _ in range(int(input())):
+    sums = list()
+    l = list()
     n, k = map(int, input().split())
     s = input()
-    s = s.replace(" ", "")
     for i in range(len(s)):
         sums.append(int(s[i:]+s[0:i+1],2))
     mx=max(sums)
