@@ -10,23 +10,29 @@ def getDecimal(l):
 
 T = int(input())
 sums = list()
-pos = list()
-rel=list()
 l = list()
 
 while (T > 0):
     T = T-1
+    sums.clear()
+    l.clear()
     n, k = map(int, input().split())
     s = input()
     s = s.replace(" ", "")
     for i in range(len(s)):
-        sums.append(getDecimal(s[i:]+s[0:i+1]))
+        sums.append(int(s[i:]+s[0:i+1],2))
     mx=max(sums)
-    print(sums)
-    for i in range(len(sums)):
-        if sums[i]==mx:
-            pos.append(i)
-    lap=0
+    i=0
+    rotations=0
+    count=0
     while(True):
-        if k>count:
-            count=
+        if sums[i]==mx:
+            count=count+1
+        i=i+1
+        if(i==len(sums)):
+            i=0
+        if(count==k):
+            break
+        rotations=rotations+1
+    print(rotations)
+        
