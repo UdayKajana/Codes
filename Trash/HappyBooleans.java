@@ -1,4 +1,4 @@
-package HackerEarth_CodeMonk;
+package Trash;
 public class HappyBooleans{
     public static void main(String argvs[]){
         HappyBooleans happyBooleans=new HappyBooleans();
